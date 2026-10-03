@@ -1,0 +1,10 @@
+{
+  "name": "arxwright-brand",
+  "private": true,
+  "scripts": {
+    "build": "bun build.ts"
+  },
+  "devDependencies": {
+    "opentype.js": "^2.0.0"
+  }
+}
