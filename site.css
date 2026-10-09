@@ -1,0 +1,165 @@
+/* Colours mirror brand/build.ts. */
+:root {
+  --bg: #f2f4f1;
+  --ink: #1f2a27;
+  --muted: #5b6764;
+  --mark: #2e5b50;
+  --rule: #dde2de;
+  --joint: #2e5b50;
+  --joint-alpha: 0.09;
+  --glow: #fbfcfa;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #151d1b; --ink: #dfe7e4; --muted: #95a39f; --mark: #86b8aa; --rule: #2a3633; --joint: #86b8aa; --joint-alpha: 0.08; --glow: #1c2724; }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(ellipse at 50% 40%, var(--glow), var(--bg) 70%);
+  color: var(--ink);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+/* Faint wall of large, weathered stones behind everything (tile is 720px wide; courses wrap seamlessly), fading out toward the centre so the text stays clean. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--joint);
+  opacity: var(--joint-alpha);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='278'%3E%3Cg stroke='black' stroke-opacity='.75' stroke-width='1.5' stroke-linejoin='round'%3E%3Cpath d='M18.2,4.3Q105.0,2.6 190.0,4.4Q206.0,4.0 206.9,18.9Q205.1,48.0 204.8,70.3Q206.0,92.0 183.9,90.6Q105.0,94.1 19.8,92.5Q4.0,92.0 4.3,76.6Q1.9,48.0 4.1,16.8Q4.0,4.0 18.1,4.0Z' fill-opacity='0.2'/%3E%3Cpath d='M223.2,5.0Q285.0,4.1 346.1,4.0Q356.0,4.0 356.5,14.2Q355.0,48.0 357.5,86.9Q356.0,92.0 350.5,92.6Q285.0,91.2 227.5,91.4Q214.0,92.0 212.7,78.4Q213.6,48.0 215.0,13.1Q214.0,4.0 223.4,4.0Z' fill-opacity='0.12'/%3E%3Cpath d='M388.5,3.9Q480.0,6.1 574.4,2.7Q596.0,4.0 596.4,26.1Q595.0,48.0 594.8,85.5Q596.0,92.0 591.4,92.8Q480.0,90.3 373.0,90.8Q364.0,92.0 362.7,83.1Q362.6,48.0 364.2,27.1Q364.0,4.0 387.2,4.0Z' fill-opacity='0.08'/%3E%3Cpath d='M612.3,3.8Q660.0,2.7 696.1,5.4Q716.0,4.0 716.9,22.6Q717.7,48.0 715.1,83.3Q716.0,92.0 708.7,92.4Q660.0,90.2 623.1,91.1Q604.0,92.0 603.3,75.2Q603.2,48.0 603.4,12.2Q604.0,4.0 613.4,4.0Z' fill-opacity='0.12'/%3E%3Cpath d='M101.2,99.9Q180.0,102.0 249.5,100.2Q266.0,100.0 267.1,115.5Q264.5,135.0 267.2,160.6Q266.0,170.0 254.9,169.1Q180.0,171.1 112.1,169.1Q94.0,170.0 95.4,154.3Q94.5,135.0 93.8,106.4Q94.0,100.0 101.6,100.0Z' fill-opacity='0.08'/%3E%3Cpath d='M280.0,101.0Q400.0,100.4 502.1,99.0Q526.0,100.0 526.7,122.0Q524.8,135.0 526.2,160.8Q526.0,170.0 516.1,169.3Q400.0,171.8 291.8,168.5Q274.0,170.0 273.3,151.2Q272.1,135.0 273.0,106.3Q274.0,100.0 280.7,100.0Z' fill-opacity='0.08'/%3E%3Cpath d='M551.7,100.5Q600.0,100.8 657.9,98.9Q666.0,100.0 664.6,106.9Q667.8,135.0 666.6,158.9Q666.0,170.0 652.0,170.4Q600.0,169.9 556.7,169.5Q534.0,170.0 535.5,146.7Q534.2,135.0 534.7,117.5Q534.0,100.0 550.3,100.0Z' fill-opacity='0.24'/%3E%3Cpath d='M692.8,100.6Q740.0,101.8 788.4,99.8Q806.0,100.0 806.9,119.8Q806.3,135.0 806.4,149.4Q806.0,170.0 786.0,170.3Q740.0,168.2 696.9,171.5Q674.0,170.0 675.1,148.2Q673.5,135.0 674.7,119.5Q674.0,100.0 693.3,100.0Z' fill-opacity='0.12'/%3E%3Cpath d='M-27.2,100.6Q20.0,101.8 68.4,99.8Q86.0,100.0 86.9,119.8Q86.3,135.0 86.4,149.4Q86.0,170.0 66.0,170.3Q20.0,168.2 -23.1,171.5Q-46.0,170.0 -44.9,148.2Q-46.5,135.0 -45.3,119.5Q-46.0,100.0 -26.7,100.0Z' fill-opacity='0.12'/%3E%3Cpath d='M56.5,178.3Q165.0,177.9 264.1,178.6Q286.0,178.0 286.0,199.4Q287.9,226.0 285.3,265.0Q286.0,274.0 277.9,274.5Q165.0,272.7 62.5,275.2Q44.0,274.0 44.5,254.3Q45.7,226.0 43.5,192.4Q44.0,178.0 57.9,178.0Z' fill-opacity='0.2'/%3E%3Cpath d='M304.7,177.7Q375.0,178.4 441.7,176.9Q456.0,178.0 456.0,192.8Q457.5,226.0 456.6,254.8Q456.0,274.0 434.8,273.0Q375.0,273.8 315.8,273.1Q294.0,274.0 293.7,251.9Q294.0,226.0 293.4,188.6Q294.0,178.0 303.6,178.0Z' fill-opacity='0.12'/%3E%3Cpath d='M488.8,176.6Q525.0,178.9 572.1,177.4Q586.0,178.0 586.9,190.7Q584.4,226.0 585.9,265.2Q586.0,274.0 579.6,273.2Q525.0,272.4 469.2,274.4Q464.0,274.0 463.8,267.8Q464.7,226.0 464.9,203.1Q464.0,178.0 487.7,178.0Z' fill-opacity='0.24'/%3E%3Cpath d='M610.9,177.9Q675.0,178.9 745.4,177.3Q756.0,178.0 755.5,188.2Q756.1,226.0 756.3,260.2Q756.0,274.0 741.1,274.9Q675.0,275.8 602.0,275.3Q594.0,274.0 594.7,263.7Q593.8,226.0 594.4,197.6Q594.0,178.0 612.3,178.0Z' fill-opacity='0.12'/%3E%3Cpath d='M-109.1,177.9Q-45.0,178.9 25.4,177.3Q36.0,178.0 35.5,188.2Q36.1,226.0 36.3,260.2Q36.0,274.0 21.1,274.9Q-45.0,275.8 -118.0,275.3Q-126.0,274.0 -125.3,263.7Q-126.2,226.0 -125.6,197.6Q-126.0,178.0 -107.7,178.0Z' fill-opacity='0.12'/%3E%3C/g%3E%3C/svg%3E"), radial-gradient(ellipse at 50% 45%, transparent 25%, black 75%);
+  -webkit-mask-composite: source-in;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='278'%3E%3Cg stroke='black' stroke-opacity='.75' stroke-width='1.5' stroke-linejoin='round'%3E%3Cpath d='M18.2,4.3Q105.0,2.6 190.0,4.4Q206.0,4.0 206.9,18.9Q205.1,48.0 204.8,70.3Q206.0,92.0 183.9,90.6Q105.0,94.1 19.8,92.5Q4.0,92.0 4.3,76.6Q1.9,48.0 4.1,16.8Q4.0,4.0 18.1,4.0Z' fill-opacity='0.2'/%3E%3Cpath d='M223.2,5.0Q285.0,4.1 346.1,4.0Q356.0,4.0 356.5,14.2Q355.0,48.0 357.5,86.9Q356.0,92.0 350.5,92.6Q285.0,91.2 227.5,91.4Q214.0,92.0 212.7,78.4Q213.6,48.0 215.0,13.1Q214.0,4.0 223.4,4.0Z' fill-opacity='0.12'/%3E%3Cpath d='M388.5,3.9Q480.0,6.1 574.4,2.7Q596.0,4.0 596.4,26.1Q595.0,48.0 594.8,85.5Q596.0,92.0 591.4,92.8Q480.0,90.3 373.0,90.8Q364.0,92.0 362.7,83.1Q362.6,48.0 364.2,27.1Q364.0,4.0 387.2,4.0Z' fill-opacity='0.08'/%3E%3Cpath d='M612.3,3.8Q660.0,2.7 696.1,5.4Q716.0,4.0 716.9,22.6Q717.7,48.0 715.1,83.3Q716.0,92.0 708.7,92.4Q660.0,90.2 623.1,91.1Q604.0,92.0 603.3,75.2Q603.2,48.0 603.4,12.2Q604.0,4.0 613.4,4.0Z' fill-opacity='0.12'/%3E%3Cpath d='M101.2,99.9Q180.0,102.0 249.5,100.2Q266.0,100.0 267.1,115.5Q264.5,135.0 267.2,160.6Q266.0,170.0 254.9,169.1Q180.0,171.1 112.1,169.1Q94.0,170.0 95.4,154.3Q94.5,135.0 93.8,106.4Q94.0,100.0 101.6,100.0Z' fill-opacity='0.08'/%3E%3Cpath d='M280.0,101.0Q400.0,100.4 502.1,99.0Q526.0,100.0 526.7,122.0Q524.8,135.0 526.2,160.8Q526.0,170.0 516.1,169.3Q400.0,171.8 291.8,168.5Q274.0,170.0 273.3,151.2Q272.1,135.0 273.0,106.3Q274.0,100.0 280.7,100.0Z' fill-opacity='0.08'/%3E%3Cpath d='M551.7,100.5Q600.0,100.8 657.9,98.9Q666.0,100.0 664.6,106.9Q667.8,135.0 666.6,158.9Q666.0,170.0 652.0,170.4Q600.0,169.9 556.7,169.5Q534.0,170.0 535.5,146.7Q534.2,135.0 534.7,117.5Q534.0,100.0 550.3,100.0Z' fill-opacity='0.24'/%3E%3Cpath d='M692.8,100.6Q740.0,101.8 788.4,99.8Q806.0,100.0 806.9,119.8Q806.3,135.0 806.4,149.4Q806.0,170.0 786.0,170.3Q740.0,168.2 696.9,171.5Q674.0,170.0 675.1,148.2Q673.5,135.0 674.7,119.5Q674.0,100.0 693.3,100.0Z' fill-opacity='0.12'/%3E%3Cpath d='M-27.2,100.6Q20.0,101.8 68.4,99.8Q86.0,100.0 86.9,119.8Q86.3,135.0 86.4,149.4Q86.0,170.0 66.0,170.3Q20.0,168.2 -23.1,171.5Q-46.0,170.0 -44.9,148.2Q-46.5,135.0 -45.3,119.5Q-46.0,100.0 -26.7,100.0Z' fill-opacity='0.12'/%3E%3Cpath d='M56.5,178.3Q165.0,177.9 264.1,178.6Q286.0,178.0 286.0,199.4Q287.9,226.0 285.3,265.0Q286.0,274.0 277.9,274.5Q165.0,272.7 62.5,275.2Q44.0,274.0 44.5,254.3Q45.7,226.0 43.5,192.4Q44.0,178.0 57.9,178.0Z' fill-opacity='0.2'/%3E%3Cpath d='M304.7,177.7Q375.0,178.4 441.7,176.9Q456.0,178.0 456.0,192.8Q457.5,226.0 456.6,254.8Q456.0,274.0 434.8,273.0Q375.0,273.8 315.8,273.1Q294.0,274.0 293.7,251.9Q294.0,226.0 293.4,188.6Q294.0,178.0 303.6,178.0Z' fill-opacity='0.12'/%3E%3Cpath d='M488.8,176.6Q525.0,178.9 572.1,177.4Q586.0,178.0 586.9,190.7Q584.4,226.0 585.9,265.2Q586.0,274.0 579.6,273.2Q525.0,272.4 469.2,274.4Q464.0,274.0 463.8,267.8Q464.7,226.0 464.9,203.1Q464.0,178.0 487.7,178.0Z' fill-opacity='0.24'/%3E%3Cpath d='M610.9,177.9Q675.0,178.9 745.4,177.3Q756.0,178.0 755.5,188.2Q756.1,226.0 756.3,260.2Q756.0,274.0 741.1,274.9Q675.0,275.8 602.0,275.3Q594.0,274.0 594.7,263.7Q593.8,226.0 594.4,197.6Q594.0,178.0 612.3,178.0Z' fill-opacity='0.12'/%3E%3Cpath d='M-109.1,177.9Q-45.0,178.9 25.4,177.3Q36.0,178.0 35.5,188.2Q36.1,226.0 36.3,260.2Q36.0,274.0 21.1,274.9Q-45.0,275.8 -118.0,275.3Q-126.0,274.0 -125.3,263.7Q-126.2,226.0 -125.6,197.6Q-126.0,178.0 -107.7,178.0Z' fill-opacity='0.12'/%3E%3C/g%3E%3C/svg%3E"), radial-gradient(ellipse at 50% 45%, transparent 25%, black 75%);
+  mask-composite: intersect;
+}
+
+.wrap { width: 100%; max-width: 64rem; margin: 0 auto; padding: 0 1rem; }
+.prose { max-width: 42rem; }
+p { margin: 0 0 1rem; }
+a { color: var(--mark); text-underline-offset: 3px; }
+.mark { width: 2em; height: auto; flex: none; color: var(--mark); }
+
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  color: var(--ink);
+  font: 400 1rem/1 "Tenor Sans", system-ui, sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
+nav a:hover, nav a[aria-current="page"] { color: var(--mark); }
+
+main { flex: 1; padding: 3rem 0 4rem; }
+h1 {
+  margin: 0 0 1rem;
+  font: 400 clamp(2rem, 4.5vw, 2.6rem)/1.15 "Tenor Sans", system-ui, sans-serif;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+.hero h1 { font-size: clamp(2.3rem, 6vw, 3.6rem); max-width: 18ch; }
+h2 {
+  margin: 3rem 0 0.75rem;
+  font: 400 1.4rem/1.3 "Tenor Sans", system-ui, sans-serif;
+  letter-spacing: 0.03em;
+}
+h3 { margin: 0 0 0.4rem; font-size: 1.05rem; font-weight: 600; }
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--mark);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.lede { max-width: 38rem; color: var(--muted); font-size: 1.2rem; }
+.hero { padding: 2rem 0 1rem; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.2rem;
+  border: 1px solid var(--mark);
+  border-radius: 8px;
+  background: var(--mark);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn.ghost { background: transparent; color: var(--mark); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; margin: 1.25rem 0 0; }
+.card {
+  display: block;
+  padding: 1.35rem 1.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--glow) 80%, transparent);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px -12px rgb(0 0 0 / 0.12);
+  color: var(--ink);
+  text-decoration: none;
+}
+.card p { margin: 0; color: var(--muted); }
+a.card { transition: border-color 0.15s, transform 0.15s; }
+a.card:hover { border-color: var(--mark); transform: translateY(-2px); }
+.card .more { display: inline-block; margin-top: 0.9rem; color: var(--mark); font-weight: 600; }
+.product { display: grid; gap: 0.5rem; max-width: 42rem; margin-top: 1.25rem; }
+
+.wordmark { display: block; width: 11rem; max-width: 60%; height: auto; margin: 0 0 0.75rem; }
+.hero .wordmark { width: 15rem; margin-bottom: 1.25rem; }
+.status {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  padding: 0.15rem 0.65rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+ul { margin: 0 0 1rem; padding-left: 1.2rem; }
+li { margin-bottom: 0.45rem; }
+dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1.5rem; margin: 0 0 1rem; }
+dt { color: var(--muted); }
+dd { margin: 0; }
+.email { font-size: 1.25rem; font-weight: 600; }
+.callout {
+  margin: 1.5rem 0;
+  padding: 1.1rem 1.35rem;
+  border-left: 3px solid var(--mark);
+  border-radius: 0 10px 10px 0;
+  background: color-mix(in oklab, var(--glow) 80%, transparent);
+}
+.callout p:last-child { margin: 0; }
+
+.site-footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.875rem; }
+.site-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+.site-footer p { margin: 0; }
+.site-footer nav a { font-size: 0.875rem; }
+
+@media (max-width: 30rem) { dl { grid-template-columns: 1fr; gap: 0.1rem; } dd { margin-bottom: 0.6rem; } }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
